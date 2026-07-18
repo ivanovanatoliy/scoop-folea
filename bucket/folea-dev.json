@@ -1,27 +1,27 @@
 {
-  "version": "0.0.0-git.20260718175642.c00000057.1e19e8d",
-  "description": "Development build of Folea from commit 1e19e8d",
+  "version": "0.0.0-git.20260718181415.c00000058.8679baa",
+  "description": "Development build of Folea from commit 8679baa",
   "homepage": "https://github.com/ivanovanatoliy/folea",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ivanovanatoliy/folea/archive/1e19e8da1411214ce35bccb55d7c154b17d10648.zip",
-      "hash": "7acb5be0d1497567a90168d49342b74cfae0a97fa5834e5c21cbc41b16da3d6e",
-      "extract_dir": "folea-1e19e8da1411214ce35bccb55d7c154b17d10648"
+      "url": "https://github.com/ivanovanatoliy/folea/archive/8679baa52f85512807afa67a5727fe059a5cce1c.zip",
+      "hash": "94931d7067782782636ea791c4690136a9cf24e0b4ddf751710947a74bfc93c4",
+      "extract_dir": "folea-8679baa52f85512807afa67a5727fe059a5cce1c"
     }
   },
-  "depends": "versions/nodejs22",
+  "depends": "nodejs22",
   "installer": {
     "script": [
       "Push-Location $dir",
       "$env:CSC_IDENTITY_AUTO_DISCOVERY = 'false'",
-      "$env:FOLEA_COMMIT_SHA = '1e19e8da1411214ce35bccb55d7c154b17d10648'",
-      "$env:FOLEA_COMMIT_COUNT = '57'",
-      "$env:FOLEA_BUILD_TIMESTAMP = '20260718175642'",
+      "$env:FOLEA_COMMIT_SHA = '8679baa52f85512807afa67a5727fe059a5cce1c'",
+      "$env:FOLEA_COMMIT_COUNT = '58'",
+      "$env:FOLEA_BUILD_TIMESTAMP = '20260718181415'",
       "$env:FOLEA_SOURCE_BRANCH = 'develop'",
-      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/29654890243'",
+      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/29655465421'",
       "$builtVersion = node scripts/prepare-development-build.mjs",
-      "if ($builtVersion -ne '0.0.0-git.20260718175642.c00000057.1e19e8d') { throw \"Unexpected build version: $builtVersion\" }",
+      "if ($builtVersion -ne '0.0.0-git.20260718181415.c00000058.8679baa') { throw \"Unexpected build version: $builtVersion\" }",
       "npm ci",
       "npm version $builtVersion --no-git-tag-version --allow-same-version",
       "npm run build",
