@@ -1,13 +1,13 @@
 {
-  "version": "0.0.0-git.20260718181415.c00000058.8679baa",
-  "description": "Development build of Folea from commit 8679baa",
+  "version": "0.0.0-git.20260718193908.c00000062.ebc61a5",
+  "description": "Development build of Folea from commit ebc61a5",
   "homepage": "https://github.com/ivanovanatoliy/folea",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ivanovanatoliy/folea/archive/8679baa52f85512807afa67a5727fe059a5cce1c.zip",
-      "hash": "94931d7067782782636ea791c4690136a9cf24e0b4ddf751710947a74bfc93c4",
-      "extract_dir": "folea-8679baa52f85512807afa67a5727fe059a5cce1c"
+      "url": "https://github.com/ivanovanatoliy/folea/archive/ebc61a5b2ba0e6a5330d3fa10977779f60a9f746.zip",
+      "hash": "66b7b49a7c9b487f8f18f1d77d76e4ba929fbb285396defe67676d654ae77ea6",
+      "extract_dir": "folea-ebc61a5b2ba0e6a5330d3fa10977779f60a9f746"
     }
   },
   "depends": "nodejs22",
@@ -15,13 +15,13 @@
     "script": [
       "Push-Location $dir",
       "$env:CSC_IDENTITY_AUTO_DISCOVERY = 'false'",
-      "$env:FOLEA_COMMIT_SHA = '8679baa52f85512807afa67a5727fe059a5cce1c'",
-      "$env:FOLEA_COMMIT_COUNT = '58'",
-      "$env:FOLEA_BUILD_TIMESTAMP = '20260718181415'",
+      "$env:FOLEA_COMMIT_SHA = 'ebc61a5b2ba0e6a5330d3fa10977779f60a9f746'",
+      "$env:FOLEA_COMMIT_COUNT = '62'",
+      "$env:FOLEA_BUILD_TIMESTAMP = '20260718193908'",
       "$env:FOLEA_SOURCE_BRANCH = 'develop'",
-      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/29655465421'",
+      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/29658193092'",
       "$builtVersion = node scripts/prepare-development-build.mjs",
-      "if ($builtVersion -ne '0.0.0-git.20260718181415.c00000058.8679baa') { throw \"Unexpected build version: $builtVersion\" }",
+      "if ($builtVersion -ne '0.0.0-git.20260718193908.c00000062.ebc61a5') { throw \"Unexpected build version: $builtVersion\" }",
       "npm ci",
       "npm version $builtVersion --no-git-tag-version --allow-same-version",
       "npm run build",
