@@ -1,13 +1,13 @@
 {
-  "version": "0.0.0-git.20260719055247.c00000067.e922be5",
-  "description": "Development build of Folea from commit e922be5",
+  "version": "0.0.0-git.20260719070635.c00000069.e80b00b",
+  "description": "Development build of Folea from commit e80b00b",
   "homepage": "https://github.com/ivanovanatoliy/folea",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ivanovanatoliy/folea/archive/e922be5003e374dd449fb80c95358fd464649c8f.zip",
-      "hash": "cb8ed8c9e2fccdd85413240995b5f11deded9888689b0c6cfb649e4b2f280a5f",
-      "extract_dir": "folea-e922be5003e374dd449fb80c95358fd464649c8f"
+      "url": "https://github.com/ivanovanatoliy/folea/archive/e80b00ba257bde6b05b9cfaea20046a0270ecc85.zip",
+      "hash": "e3bccf8125e007bc9734909ac1405184133781160e92f3ec0c7453b77f70a040",
+      "extract_dir": "folea-e80b00ba257bde6b05b9cfaea20046a0270ecc85"
     }
   },
   "depends": "nodejs22",
@@ -15,13 +15,13 @@
     "script": [
       "Push-Location $dir",
       "$env:CSC_IDENTITY_AUTO_DISCOVERY = 'false'",
-      "$env:FOLEA_COMMIT_SHA = 'e922be5003e374dd449fb80c95358fd464649c8f'",
-      "$env:FOLEA_COMMIT_COUNT = '67'",
-      "$env:FOLEA_BUILD_TIMESTAMP = '20260719055247'",
+      "$env:FOLEA_COMMIT_SHA = 'e80b00ba257bde6b05b9cfaea20046a0270ecc85'",
+      "$env:FOLEA_COMMIT_COUNT = '69'",
+      "$env:FOLEA_BUILD_TIMESTAMP = '20260719070635'",
       "$env:FOLEA_SOURCE_BRANCH = 'develop'",
-      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/29675521399'",
+      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/29677544400'",
       "$builtVersion = node scripts/prepare-development-build.mjs",
-      "if ($builtVersion -ne '0.0.0-git.20260719055247.c00000067.e922be5') { throw \"Unexpected build version: $builtVersion\" }",
+      "if ($builtVersion -ne '0.0.0-git.20260719070635.c00000069.e80b00b') { throw \"Unexpected build version: $builtVersion\" }",
       "npm ci",
       "npm version $builtVersion --no-git-tag-version --allow-same-version",
       "npm run build",
@@ -31,6 +31,6 @@
       "Get-ChildItem -LiteralPath $dir -Force | Where-Object Name -ne 'app' | Remove-Item -Recurse -Force"
     ]
   },
-  "bin": [["app\\folea.exe", "folea-dev"]],
-  "shortcuts": [["app\\folea.exe", "Folea Dev"]]
+  "bin": [["app\\folea.exe", "folea"]],
+  "shortcuts": [["app\\folea.exe", "folea"]]
 }
