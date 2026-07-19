@@ -1,13 +1,13 @@
 {
-  "version": "0.0.0-git.20260719091902.c00000073.eeb29ad",
+  "version": "0.0.0-git.20260719102846.c00000075.e039a75",
   "description": "Keyboard-driven, minimalist note manager for Typst notes",
   "homepage": "https://github.com/ivanovanatoliy/folea",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ivanovanatoliy/folea/archive/eeb29adeffdff97210c271a2ab72dd8bae935c25.zip",
-      "hash": "9e1070b271485bc44db73c7911d3377557293d229f92ebc00fa3ce789f2e5a79",
-      "extract_dir": "folea-eeb29adeffdff97210c271a2ab72dd8bae935c25"
+      "url": "https://github.com/ivanovanatoliy/folea/archive/e039a75f3a93ce533dd36ad29bfb5cbe7131a306.zip",
+      "hash": "1f5a2325f93b0a27fea65bb8720ef9d41e186f068832abbd90a3c49fafd2ef79",
+      "extract_dir": "folea-e039a75f3a93ce533dd36ad29bfb5cbe7131a306"
     }
   },
   "depends": "nodejs22",
@@ -15,13 +15,13 @@
     "script": [
       "Push-Location $dir",
       "$env:CSC_IDENTITY_AUTO_DISCOVERY = 'false'",
-      "$env:FOLEA_COMMIT_SHA = 'eeb29adeffdff97210c271a2ab72dd8bae935c25'",
-      "$env:FOLEA_COMMIT_COUNT = '73'",
-      "$env:FOLEA_BUILD_TIMESTAMP = '20260719091902'",
+      "$env:FOLEA_COMMIT_SHA = 'e039a75f3a93ce533dd36ad29bfb5cbe7131a306'",
+      "$env:FOLEA_COMMIT_COUNT = '75'",
+      "$env:FOLEA_BUILD_TIMESTAMP = '20260719102846'",
       "$env:FOLEA_SOURCE_BRANCH = 'develop'",
-      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/29681354216'",
+      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/29683396393'",
       "$builtVersion = node scripts/prepare-development-build.mjs",
-      "if ($builtVersion -ne '0.0.0-git.20260719091902.c00000073.eeb29ad') { throw \"Unexpected build version: $builtVersion\" }",
+      "if ($builtVersion -ne '0.0.0-git.20260719102846.c00000075.e039a75') { throw \"Unexpected build version: $builtVersion\" }",
       "npm ci",
       "npm version $builtVersion --no-git-tag-version --allow-same-version",
       "npm run build",
