@@ -1,13 +1,13 @@
 {
-  "version": "0.0.0-git.20260725105249.c00000079.335cc06",
+  "version": "0.0.0-git.20260725132240.c00000080.28bfa26",
   "description": "Keyboard-driven, minimalist note manager for Typst notes",
   "homepage": "https://github.com/ivanovanatoliy/folea",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ivanovanatoliy/folea/archive/335cc06a28ddb64967ae15495c0dedc389ffad11.zip",
-      "hash": "2de8326b0638b4cf6061918683fc2fb049695daf8e0275b627c0829b6eaee17e",
-      "extract_dir": "folea-335cc06a28ddb64967ae15495c0dedc389ffad11"
+      "url": "https://github.com/ivanovanatoliy/folea/archive/28bfa26e6f7451789bb445c61bc6f9a42fec8362.zip",
+      "hash": "9d2af9d1985ec8766bc35eeb01e6e5adf53a2eb7f9cee35ab0bfe5a52380810f",
+      "extract_dir": "folea-28bfa26e6f7451789bb445c61bc6f9a42fec8362"
     }
   },
   "depends": "nodejs22",
@@ -15,15 +15,15 @@
     "script": [
       "Push-Location $dir",
       "$env:CSC_IDENTITY_AUTO_DISCOVERY = 'false'",
-      "$env:FOLEA_COMMIT_SHA = '335cc06a28ddb64967ae15495c0dedc389ffad11'",
-      "$env:FOLEA_COMMIT_COUNT = '79'",
-      "$env:FOLEA_BUILD_TIMESTAMP = '20260725105249'",
+      "$env:FOLEA_COMMIT_SHA = '28bfa26e6f7451789bb445c61bc6f9a42fec8362'",
+      "$env:FOLEA_COMMIT_COUNT = '80'",
+      "$env:FOLEA_BUILD_TIMESTAMP = '20260725132240'",
       "$env:FOLEA_SOURCE_BRANCH = 'develop'",
-      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/30155249897'",
+      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/30159609040'",
       "$legacyStartMenu = if ($global) { [Environment]::GetFolderPath('CommonStartMenu') } else { [Environment]::GetFolderPath('StartMenu') }",
       "Remove-Item -LiteralPath (Join-Path $legacyStartMenu 'Programs\\Scoop Apps\\Folea Dev.lnk') -Force -ErrorAction SilentlyContinue",
       "$builtVersion = node scripts/prepare-development-build.mjs",
-      "if ($builtVersion -ne '0.0.0-git.20260725105249.c00000079.335cc06') { throw \"Unexpected build version: $builtVersion\" }",
+      "if ($builtVersion -ne '0.0.0-git.20260725132240.c00000080.28bfa26') { throw \"Unexpected build version: $builtVersion\" }",
       "npm ci",
       "npm version $builtVersion --no-git-tag-version --allow-same-version",
       "npm run build",
