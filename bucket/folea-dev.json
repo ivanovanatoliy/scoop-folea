@@ -1,13 +1,13 @@
 {
-  "version": "0.0.0-git.20260725054031.c00000077.e2f62c1",
+  "version": "0.0.0-git.20260725060637.c00000078.8adae38",
   "description": "Keyboard-driven, minimalist note manager for Typst notes",
   "homepage": "https://github.com/ivanovanatoliy/folea",
   "license": "Apache-2.0",
   "architecture": {
     "64bit": {
-      "url": "https://github.com/ivanovanatoliy/folea/archive/e2f62c15aa87f0334218a07d1a93c5f63671bbec.zip",
-      "hash": "de1ebdc4b9063ed653498d3fbc0e2a2c922b50724543a159b0c20ad0740b9f2d",
-      "extract_dir": "folea-e2f62c15aa87f0334218a07d1a93c5f63671bbec"
+      "url": "https://github.com/ivanovanatoliy/folea/archive/8adae3827ce2aa2c38b228ca043b903350342d9b.zip",
+      "hash": "8d398d14d2739d82c0a205499d898a96fe5563401a512c450289338d46777cf4",
+      "extract_dir": "folea-8adae3827ce2aa2c38b228ca043b903350342d9b"
     }
   },
   "depends": "nodejs22",
@@ -15,13 +15,15 @@
     "script": [
       "Push-Location $dir",
       "$env:CSC_IDENTITY_AUTO_DISCOVERY = 'false'",
-      "$env:FOLEA_COMMIT_SHA = 'e2f62c15aa87f0334218a07d1a93c5f63671bbec'",
-      "$env:FOLEA_COMMIT_COUNT = '77'",
-      "$env:FOLEA_BUILD_TIMESTAMP = '20260725054031'",
+      "$env:FOLEA_COMMIT_SHA = '8adae3827ce2aa2c38b228ca043b903350342d9b'",
+      "$env:FOLEA_COMMIT_COUNT = '78'",
+      "$env:FOLEA_BUILD_TIMESTAMP = '20260725060637'",
       "$env:FOLEA_SOURCE_BRANCH = 'develop'",
-      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/30146169247'",
+      "$env:FOLEA_WORKFLOW_RUN_URL = 'https://github.com/ivanovanatoliy/folea/actions/runs/30146932355'",
+      "$legacyStartMenu = if ($global) { [Environment]::GetFolderPath('CommonStartMenu') } else { [Environment]::GetFolderPath('StartMenu') }",
+      "Remove-Item -LiteralPath (Join-Path $legacyStartMenu 'Programs\\Scoop Apps\\Folea Dev.lnk') -Force -ErrorAction SilentlyContinue",
       "$builtVersion = node scripts/prepare-development-build.mjs",
-      "if ($builtVersion -ne '0.0.0-git.20260725054031.c00000077.e2f62c1') { throw \"Unexpected build version: $builtVersion\" }",
+      "if ($builtVersion -ne '0.0.0-git.20260725060637.c00000078.8adae38') { throw \"Unexpected build version: $builtVersion\" }",
       "npm ci",
       "npm version $builtVersion --no-git-tag-version --allow-same-version",
       "npm run build",
@@ -31,6 +33,10 @@
       "Get-ChildItem -LiteralPath $dir -Force | Where-Object Name -ne 'app' | Remove-Item -Recurse -Force"
     ]
   },
+  "pre_uninstall": [
+    "$legacyStartMenu = if ($global) { [Environment]::GetFolderPath('CommonStartMenu') } else { [Environment]::GetFolderPath('StartMenu') }",
+    "Remove-Item -LiteralPath (Join-Path $legacyStartMenu 'Programs\\Scoop Apps\\Folea Dev.lnk') -Force -ErrorAction SilentlyContinue"
+  ],
   "bin": [["app\\folea.exe", "folea"]],
   "shortcuts": [["app\\folea.exe", "folea"]]
 }
